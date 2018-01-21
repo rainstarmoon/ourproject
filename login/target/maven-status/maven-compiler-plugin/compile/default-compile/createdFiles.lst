@@ -1,0 +1,9 @@
+com\project\po\Role.class
+com\project\po\User.class
+com\project\service\UserService.class
+com\project\dao\impl\UserDaoImpl.class
+com\project\controller\UserController.class
+com\project\LoginApplication.class
+com\project\po\Permission.class
+com\project\service\impl\UserServiceImpl.class
+com\project\dao\UserDao.class
