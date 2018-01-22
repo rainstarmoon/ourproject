@@ -19,18 +19,21 @@ public class ShiroConfig {
 	@Bean
 	public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
 		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+		
 		Map<String, Filter> filters = shiroFilterFactoryBean.getFilters();
+		
 		filters.put("authc", new CustomFormAuthenticationFilter());
 		
 		
 		
 		shiroFilterFactoryBean.setSecurityManager(securityManager);
-        shiroFilterFactoryBean.setLoginUrl("/login");  
+        shiroFilterFactoryBean.setLoginUrl("/main");  
         shiroFilterFactoryBean.setSuccessUrl("/main3");
         
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>(); 
         filterChainDefinitionMap.put("/static/**", "anon");
         
+        filterChainDefinitionMap.put("/test", "anon");
         filterChainDefinitionMap.put("/main", "anon");
         filterChainDefinitionMap.put("/main2", "anon");
         filterChainDefinitionMap.put("/doLogin", "anon");

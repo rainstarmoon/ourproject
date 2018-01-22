@@ -2,6 +2,7 @@ package com.project.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -16,7 +17,7 @@ import com.project.po.User;
 public class PageController {
 	
 	@RequestMapping("/doLogin")
-	public String login(User user) {
+	public String login(User user,HttpServletRequest request) {
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         Subject currentUser = SecurityUtils.getSubject();  
         try {  
@@ -24,8 +25,19 @@ public class PageController {
         }catch(Exception e){
         	e.printStackTrace();
         }
+        System.out.println("PageController.login()");
+        Object attribute = request.getSession().getAttribute("aaa");
+        System.out.println(attribute);
+       
+        
         //验证是否登录成功  
-        if(currentUser.isAuthenticated()){  
+        if(currentUser.isAuthenticated()){
+        	/*
+        	Cookie[] cookies = request.getCookies();//这样便可以获取一个cookie数组
+        	for(Cookie cookie : cookies){
+        		System.out.println(cookie.getName());
+        		System.out.println(cookie.getValue());
+        	}*/
             return "redirect:/main3";
         }else{  
             token.clear();  
