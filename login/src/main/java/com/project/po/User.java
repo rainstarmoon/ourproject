@@ -1,6 +1,7 @@
 package com.project.po;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -12,6 +13,7 @@ public class User implements Serializable {
 	private ObjectId id;
 	private String username;
 	private String password;
+	private List<Role> roleList;
 
 	public ObjectId getId() {
 		return id;
@@ -35,6 +37,14 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public List<Role> getRoleList() {
+		return roleList;
+	}
+
+	public void setRoleList(List<Role> roleList) {
+		this.roleList = roleList;
 	}
 
 }

@@ -9,3 +9,7 @@ spring:
             database: ourproject
             username: our
             password: our
+    freemarker:
+        template-loader-path: classpath:/templates
+    mvc:
+        static-path-pattren: /static/**
