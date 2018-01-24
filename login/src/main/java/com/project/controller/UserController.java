@@ -15,10 +15,17 @@ public class UserController {
 	private UserService userService;
 
 
-	@RequestMapping("/login")
-	public Object login(User user) {
+	
+	@RequestMapping("/query")
+	public Object query(User user) {
 		user = userService.queryByUsername(user);
 		return user;
 	}
+	
+	
+	
+	
+	
+	
 
 }
