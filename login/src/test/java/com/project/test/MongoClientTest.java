@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.bson.Document;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
@@ -13,7 +17,11 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.project.LoginApplication;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = LoginApplication.class)
+@WebAppConfiguration
 public class MongoClientTest {
 
 	@Test
