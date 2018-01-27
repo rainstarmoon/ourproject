@@ -1,0 +1,14 @@
+server:
+    port: 9001
+    
+spring:
+    datasource:
+        name: spring_boot_mybatis
+        url: jdbc:mysql://127.0.0.1:3306/ourproject
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+    mapper-locations: classpath:com/project/mapper/*Mapper.xml
+    type-aliases-package: com.project.pojo
