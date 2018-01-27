@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
-	@RequestMapping("/file")
+	@RequestMapping("/showFile")
 	public String hello(Map<String, Object> map, HttpServletRequest request) {
 		map.put("path", "http://"+request.getServerName() + ":" + request.getServerPort());
 		return "file";

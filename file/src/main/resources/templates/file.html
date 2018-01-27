@@ -14,9 +14,17 @@
 	var vue;
 	$(function() {
 		vue = new Vue({
-			el:"#main",
-			data:{
-				name:"xiazeyu"
+			el : "#main",
+			data : {
+
+			},
+			method : {
+				"download" : function() {
+					var iframe = document.createElement("iframe");
+					iframe.src = 127.0.0.1:9001/file/download
+					iframe.style.display = "none";
+					document.body.appendChild(iframe);
+				}
 			}
 		});
 	})
@@ -24,7 +32,14 @@
 </head>
 <body>
 	<div id="main">
-		{{ name }}
+		<Upload multiple type="drag"
+			action="http://127.0.0.1:9001/file/upload">
+		<div style="padding: 20px 0">
+			<Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+			<p>Click or drag files here to upload</p>
+		</div>
+		</Upload>
+		<a @click="download">下载</a>
 	</div>
 </body>
 </html>

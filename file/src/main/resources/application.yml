@@ -22,7 +22,17 @@ spring:
     
     mvc:
         static-path-pattren: /static/**
+    jmx:
+        enabled: false
 
 mybatis:
     mapper-locations: classpath:/mapper/*Mapper.xml
     type-aliases-package: com.project.pojo
+
+fdfs:
+    soTimeout: 1500
+    connectTimeout: 600
+    thumbImage:
+        width: 150
+        height: 150
+    trackerList: 192.168.1.111:22122
