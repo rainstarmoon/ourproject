@@ -16,6 +16,6 @@ public interface SysUserDao {
 	
 	List<SysUserPo> selectByCondition(SysUserPo sysUserPo);
 	
-	SysUserPo selectById(SysUserPo sysUserPo);
+	SysUserPo selectByNo(SysUserPo sysUserPo);
 	
 }

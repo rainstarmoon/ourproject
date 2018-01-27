@@ -5,7 +5,7 @@ import com.project.pojo.CloudDiscPo;
 
 public interface CloudDiscDao {
 
-	CloudDiscPo insert(CloudDiscPo cloudDiscPo);
+	/*CloudDiscPo insert(CloudDiscPo cloudDiscPo);
 
 	void delete(CloudDiscPo cloudDiscPo);
 
@@ -15,5 +15,5 @@ public interface CloudDiscDao {
 
 	List<CloudDiscPo> selectByCondition(CloudDiscPo cloudDiscPo);
 
-	CloudDiscPo selectById(CloudDiscPo cloudDiscPo);
+	CloudDiscPo selectById(CloudDiscPo cloudDiscPo);*/
 }

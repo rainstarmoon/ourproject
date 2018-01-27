@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.SysUserDao">
+	
+	<sql id="sysuserColumn">
+		no,id,username,password,flag
+	</sql>
+
+	<insert id="insert" parameterType="SysUserPo" useGeneratedKeys="true"
+	keyColumn="no" keyProperty="no">
+		insert into t_sys_user
+		(id, username, password, flag)
+		values
+		(#{id}, #{username}, #{password}, #{flag})
+	</insert>
+
+	<delete id="delete" parameterType="SysUserPo">
+		delete from t_sys_user
+		where no = #{no}
+	</delete>
+
+	<update id="updateByCondition" parameterType="SysUserPo">
+		update t_sys_user
+		<set>
+			<if test="id != null">
+				id = #{id},
+			</if>
+			<if test="username != null">
+				username = #{username},
+			</if>
+			<if test="password != null">
+				password = #{password},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+		</set>
+		where
+		no = #{no}
+	</update>
+
+	<update id="update" parameterType="SysUserPo">
+		update t_sys_user sysuser
+		set
+		id = #{id},
+		username = #{username},
+		password = #{path},
+		flag = #{flag}
+		where
+		no = #{no}
+	</update>
+	<select id="selectByCondition" parameterType="SysUserPo" resultType="SysUserPo">
+		select 
+		<include refid="sysuserColumn"/>
+		from t_sys_user
+		<where>
+			<if test="no != null">
+				and no = #{no} 
+			</if>
+			<if test="id != null">
+				and id = #{id} 
+			</if>
+			<if test="username != null">
+				and username = #{username}
+			</if>
+			<if test="password != null">
+				and password = #{password}
+			</if>
+			<if test="flag != null">
+				and flag = #{flag}
+			</if>
+		</where>
+	</select>
+	<select id="selectByNo" parameterType="SysUserPo" resultType="SysUserPo">
+		select 
+		<include refid="sysuserColumn"/>
+		from t_sys_user
+		where
+		no = #{no}
+	</select>
+</mapper>

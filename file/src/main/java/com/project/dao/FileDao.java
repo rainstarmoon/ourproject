@@ -5,7 +5,7 @@ import com.project.pojo.FilePo;
 
 public interface FileDao {
 
-	FilePo insert(FilePo filePo);
+	/*FilePo insert(FilePo filePo);
 	
 	void delete(FilePo filePo);
 	
@@ -15,5 +15,5 @@ public interface FileDao {
 	
 	List<FilePo> selectByCondition(FilePo filePo);
 	
-	FilePo selectById(FilePo filePo);
+	FilePo selectById(FilePo filePo);*/
 }

@@ -5,7 +5,7 @@ import com.project.pojo.FileCommunicatePo;
 
 public interface FileCommunicateDao {
 
-	FileCommunicatePo insert(FileCommunicatePo fileCommunicatePo);
+/*	FileCommunicatePo insert(FileCommunicatePo fileCommunicatePo);
 	
 	void delete(FileCommunicatePo fileCommunicatePo);
 	
@@ -15,5 +15,5 @@ public interface FileCommunicateDao {
 	
 	List<FileCommunicatePo> selectByCondition(FileCommunicatePo fileCommunicatePo);
 	
-	FileCommunicatePo selectById(FileCommunicatePo fileCommunicatePo);
+	FileCommunicatePo selectById(FileCommunicatePo fileCommunicatePo);*/
 }
