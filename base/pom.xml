@@ -8,8 +8,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>joint</module>
 		<module>login</module>
 		<module>file</module>
+		<module>mail</module>
 	</modules>
 
 	<parent>
@@ -19,7 +21,7 @@
 	</parent>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -61,11 +63,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- spring boot web依赖 -->
+		<!-- spring boot web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- spring AOP -->		
+		<dependency>  
+			<groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-aop</artifactId>  
+		</dependency> 
 		<!-- mongodb -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -99,12 +106,16 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.3.1</version>
 		</dependency>
-
 		<!-- fastdfs -->
 		<dependency>
 			<groupId>com.github.tobato</groupId>
 			<artifactId>fastdfs-client</artifactId>
 			<version>1.25.4-RELEASE</version>
+		</dependency>
+		<!-- mail -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
 	</dependencies>

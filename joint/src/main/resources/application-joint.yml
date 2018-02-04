@@ -1,0 +1,48 @@
+spring:
+    datasource:
+        name: spring_boot_mybatis
+        url: jdbc:mysql://192.168.1.111:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+    
+    data:
+        mongodb:
+            host: 192.168.1.111
+            port: 27017
+            database: ourproject
+            username: our
+            password: our
+    
+    freemarker:
+        template-loader-path: classpath:/templates
+    
+    mvc:
+        static-path-pattren: /static/**
+        
+    jmx:
+        enabled: false
+        
+    mail:
+        host: smtp.163.com
+        username: rainsmilemoon@163.com
+        password: xia513512511
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                        required: true
+
+mybatis:
+    mapper-locations: classpath:/mapper/*Mapper.xml
+    type-aliases-package: com.project.pojo
+
+fdfs:
+    soTimeout: 1500
+    connectTimeout: 600
+    thumbImage:
+        width: 150
+        height: 150
+    trackerList: 192.168.1.111:22122

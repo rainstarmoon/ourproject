@@ -10,6 +10,8 @@ public class SysUserPo implements Serializable {
 	private String id;
 	private String username;
 	private String password;
+	private String email;
+	private String phone;
 	private Boolean flag;
 	private List<CloudDiscPo> cloudDiscs;
 
@@ -59,6 +61,22 @@ public class SysUserPo implements Serializable {
 
 	public void setCloudDiscs(List<CloudDiscPo> cloudDiscs) {
 		this.cloudDiscs = cloudDiscs;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

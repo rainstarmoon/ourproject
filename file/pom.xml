@@ -44,6 +44,11 @@
 	</pluginRepositories>
 
 	<dependencies>
+		<dependency>
+			<groupId>ourproject</groupId>
+			<artifactId>joint</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

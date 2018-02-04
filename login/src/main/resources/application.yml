@@ -2,24 +2,5 @@ server:
     port: 9000
     
 spring:
-    datasource:
-        name: spring_boot_mybatis
-        url: jdbc:mysql://192.168.1.111:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-        username: root
-        password: root
-        driver-class-name: com.mysql.jdbc.Driver
-    data:
-        mongodb:
-            host: 192.168.1.111
-            port: 27017
-            database: ourproject
-            username: our
-            password: our
-    freemarker:
-        template-loader-path: classpath:/templates
-    mvc:
-        static-path-pattren: /static/**
-
-mybatis:
-    mapper-locations: classpath:/mapper/*Mapper.xml
-    type-aliases-package: com.project.pojo
+    profiles:
+        active: joint
