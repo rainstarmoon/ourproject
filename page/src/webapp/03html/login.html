@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>统一登陆</title>
+<script src="../01scripts/jquery/jquery-3.3.1.js"></script>
+<script src="../01scripts/jquery/jquery-3.3.1.min.js"></script>
+<script src="../01scripts/vue/vue.js"></script>
+<script src="../01scripts/vue/vue.min.js"></script>
+<script src="../01scripts/iview/iview.js"></script>
+<script src="../01scripts/iview/iview.min.js"></script>
+<link href="../02css/iview/iview.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var vue;
+$(function(){
+	vue=new Vue({
+		el:"#main",
+		data(){
+			const validatorUsername = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('Please fill in the Username.'));
+                } else {
+                    callback();
+                }
+            };
+			return{
+				loginRule: {
+					username:[
+						{ required: true, validator:validatorUsername, trigger: 'blur' },
+					],
+                    password: [
+                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                    ]
+                },
+                loginForm:{
+					username:"",
+					password:""
+				},
+				usernameStyle:"width:100px;",
+				passwordStyle:"width:100px;",
+				
+			}
+		},
+		watch:{
+			"loginForm.username":function(newVal,oldVal){
+				var values=newVal.split("");
+				var width=0;
+				var reg=/\w/;
+				for(var i=0;i<values.length;i++){
+					if(reg.test(values[i])){
+						width+=6.7;
+					}else{
+						width+=13.6;
+					}
+				}
+				if(width>=100){
+					if(width>window.innerWidth*0.5){
+						width=window.innerWidth*0.5;
+					}
+					this.usernameStyle="width:"+width+"px;";
+				}else{
+					this.usernameStyle="width:"+100+"px;";
+				}
+			},
+			"loginForm.password":function(newVal,oldVal){
+				var values=newVal.split("");
+				var width=10;
+				for(var i=0;i<values.length;i++){
+					width+=4;
+				}
+				if(width>=100){
+					if(width>window.innerWidth*0.5){
+						width=window.innerWidth*0.5;
+					}
+					this.passwordStyle="width:"+width+"px;";
+				}else{
+					this.passwordStyle="width:"+100+"px;";
+				}
+			},
+		},
+		methods:{
+			loginSubmit:function(){
+				var self=this;
+				self.$refs.loginRef.validate(function(valid){
+					if(valid){
+						self.doLoginAjax();
+					}
+				})
+			},
+			doLoginAjax:function(){
+				var self=this;
+				var user={
+					"username":self.loginForm.username,
+					"password":self.loginForm.password
+				};
+				return $.ajax({
+					url:"http://127.0.0.1/login/doLogin",
+					type:"post",
+					data:user,
+					dataType:"text"
+				}).done(function(message){
+					console.log(message);
+				});
+			}
+			
+			
+			
+		}
+	});
+})
+
+</script>
+<body>
+	<div id="main">
+		<i-Form ref="loginRef" :model="loginForm" :rules="loginRule" label-width="100">
+			<Form-Item prop="username" label="用户名："> 
+				<i-Input type="text" :style="usernameStyle" v-model="loginForm.username" placeholder="Username" size="small"></i-Input>
+			</Form-Item>
+			<Form-Item prop="password" label="密码：">
+				 <i-Input type="password" :style="passwordStyle" v-model="loginForm.password" placeholder="Password" size="small"></i-Input>
+			</Form-Item>
+			<Form-Item>
+				<i-button type="primary" @click="loginSubmit">Signin</i-button>
+			</Form-Item>
+		</Form>
+	</div>
+</body>
+</html>
