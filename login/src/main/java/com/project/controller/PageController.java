@@ -18,7 +18,7 @@ public class PageController {
 	@RequestMapping("/doLogin")
 	public String login(User user,HttpServletRequest request) {
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
-        Subject currentUser = SecurityUtils.getSubject();  
+        Subject currentUser = SecurityUtils.getSubject();
         try {  
             currentUser.login(token);  
         }catch(Exception e){
@@ -27,7 +27,7 @@ public class PageController {
         //验证是否登录成功  
         if(currentUser.isAuthenticated()){
             return "redirect:/main3";
-        }else{  
+        }else{
             token.clear();  
             return "redirect:/main2";
         } 
