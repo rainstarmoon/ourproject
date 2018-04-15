@@ -11,9 +11,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.project.pojo.Permission;
-import com.project.pojo.Role;
-import com.project.pojo.User;
+import com.project.base.pojo.Permission;
+import com.project.base.pojo.Role;
+import com.project.base.pojo.User;
 import com.project.service.UserService;
 
 public class MongodbRealm extends AuthorizingRealm {

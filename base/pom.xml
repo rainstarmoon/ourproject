@@ -14,6 +14,7 @@
 		<module>../file</module>
 		<module>../mail</module>
 		<module>../eureka</module>
+		<module>../ribbon</module>
 	</modules>
 
 	<properties>
@@ -56,6 +57,7 @@
 	</repositories>
 
 	<dependencies>
+
 		<!-- spring boot 单元测试 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -127,6 +129,12 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-eureka</artifactId>
+				<version>${spring-cloud-netflix.version}</version>
+			</dependency>
+			<!--ribbon -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-ribbon</artifactId>
 				<version>${spring-cloud-netflix.version}</version>
 			</dependency>
 			<!-- spring boot web -->

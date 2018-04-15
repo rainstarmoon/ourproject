@@ -6,8 +6,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import com.project.base.pojo.User;
 import com.project.dao.UserDao;
-import com.project.pojo.User;
 
 @Repository
 public class UserDaoImpl extends GenricDaoImpl implements UserDao{

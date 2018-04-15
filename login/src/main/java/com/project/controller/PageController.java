@@ -10,7 +10,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.pojo.User;
+import com.project.base.pojo.User;
 
 @Controller
 public class PageController {

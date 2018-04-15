@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.base.config.OurProjectLog;
+import com.project.base.pojo.User;
 import com.project.dao.UserDao;
-import com.project.pojo.User;
 import com.project.service.UserService;
 
 @Service

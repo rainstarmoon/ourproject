@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.base.config.OurProjectLog;
-import com.project.pojo.User;
+import com.project.base.pojo.User;
 import com.project.service.UserService;
 
 @RestController
