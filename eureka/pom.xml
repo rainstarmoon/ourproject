@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>ourproject</groupId>
@@ -9,13 +8,8 @@
 		<relativePath>../base/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>file</artifactId>
+	<artifactId>eureka</artifactId>
 	<packaging>jar</packaging>
-
-	<properties>
-		<java.version>1.8</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -23,16 +17,16 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>ourproject</groupId>
 			<artifactId>joint</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.tobato</groupId>
-			<artifactId>fastdfs-client</artifactId>
-		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -49,5 +43,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50717
-Source Host           : localhost:3306
+Source Server         : lc
+Source Server Version : 50721
+Source Host           : 192.168.1.111:3306
 Source Database       : ourproject
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-01-27 16:48:50
+Date: 2018-04-15 11:30:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,7 +58,7 @@ CREATE TABLE `t_file` (
   KEY `fk_file_file` (`parentid`),
   KEY `fk_create_user_file` (`createuserno`),
   KEY `fk_update_user_file` (`updateuserno`),
-  CONSTRAINT `fk_create_user_file` FOREIGN KEY (`createuserno`) REFERENCES `t_sys_user` (`no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk__create_user_file` FOREIGN KEY (`createuserno`) REFERENCES `t_sys_user` (`no`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_disc_file` FOREIGN KEY (`discid`) REFERENCES `t_cloud_disc` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_file_file` FOREIGN KEY (`parentid`) REFERENCES `t_file` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_update_user_file` FOREIGN KEY (`updateuserno`) REFERENCES `t_sys_user` (`no`) ON DELETE SET NULL ON UPDATE CASCADE
@@ -95,14 +95,17 @@ CREATE TABLE `t_file_communicate` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_sys_user`;
 CREATE TABLE `t_sys_user` (
-  `no` int(11) NOT NULL,
+  `no` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(200) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
   `flag` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_sys_user
 -- ----------------------------
+INSERT INTO `t_sys_user` VALUES ('1', '5a637545ec3cf1e7803882fc', 'xiazeyu', 'xiazeyu', null, null, '1');
